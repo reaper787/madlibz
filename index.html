@@ -10,8 +10,8 @@
 <form id="mad_libs">
 <label for="adjective"> Please type an adjective</label><br>
 <input type="text" id="adjective"><br>
-<label for="noun">please type a noun </label>
-<input type="text" id="noun">
+<label for="adjective">please type a noun </label>
+<input type="text" id="noun"><br>
 <label for= "verb"> please type a verb </label>
 <input type="text" id="verb">
 <input type="submit">
@@ -33,9 +33,9 @@ var completeSentence = funtion(String adj) {
   var chosen = sentences[r];
   var updated = chosen.replace("{0}", adj);
   return updated;
- $("#mad_libs").hide(1000, function() {
- $("#mad_libs").fadeIn(3000)
-})
+  var adjective$ = $("#adjective");
+  var noun$ = $("#noun");
+  var verb$ = $("#verb");
 </script>
 </body>
 </html>
