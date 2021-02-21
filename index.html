@@ -6,7 +6,7 @@
 <body>
 <h1>Mad libs</h1>
 <!-- mad libs text boxs -->
-<form>
+<form id="mad libs">
 <label for="adjective"> Please type an adjective</label><br>
 <input type="text" id="adjective"><br>
 <label for="noun">please type a noun </label>
@@ -32,7 +32,8 @@ var completeSentence = funtion(String adj) {
   var chosen = sentences[r];
   var updated = chosen.replace("{0}", adj);
   return updated;
-  
+ $("#mad libs").hide(1000, function)
+ 
 }
 </script>
 </body>
