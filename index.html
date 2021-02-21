@@ -30,8 +30,11 @@ var sentences = {
 /** This one finishes the sentence chosen at random **/
 var completeSentence = funtion(String adj) {
   var r = Math.random(1,5);
+  var adjective$ = $("#adjective");
+  var noun$ = $("#noun");
+  var verb$ = $("#verb");
   var chosen = sentences[r];
-  var updated = chosen.replace("{0}", adj);
+  var updated = chosen.replace("{0}", adjective$);
   return updated;
   var adjective$ = $("#adjective");
   var noun$ = $("#noun");
