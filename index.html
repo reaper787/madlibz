@@ -29,7 +29,7 @@ var sentences = {
 };
 
 /** This one finishes the sentence chosen at random **/
-var completeSentence = funtion(String adj) {
+var completeSentence = funtion() {
   var r = Math.random(1,5);
   var adjective$ = $("#adjective");
   var noun$ = $("#noun");
@@ -37,12 +37,11 @@ var completeSentence = funtion(String adj) {
   var chosen = sentences[r];
   var updated = chosen.replace("{0}", adjective$);
   return updated
-  document.getElementById("mad_libs").addEventListener("submit",function(event) {
-    event.preventDefault()
-    text(updated )
-    document.getElementById("demo").innerHTML = completeSentence(10, 2); 
-
+  
   }
+  document.getElementById("mad_libs").addEventListener("submit",function(event) {
+    document.getElementById("demo").innerHTML = completeSentence(); 
+
 </script>
 </body>
 </html>
