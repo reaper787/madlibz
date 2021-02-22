@@ -17,7 +17,6 @@
 <input type="submit">
 </form>
   <p id="demo"></p>
-<script src="jquery-3.5.1.min.js"></script>
 <script>
 /** This is the collection of base sentences **/
 var sentences = {
@@ -31,18 +30,19 @@ var sentences = {
 /** This one finishes the sentence chosen at random **/
 var completeSentence = funtion() {
   var r = Math.random(1,5);
-  var adjective$ = $("#adjective");
-  alert(adjective$);
-  var noun$ = $("#noun");
-  var verb$ = $("#verb");
+  var adjective = document.getElementById("adjective");
+  alert(adjective);
+  var noun = document.getElementById("noun");
+  var verb = document.getElementById("verb");
   var chosen = sentences[r];
   var updated = chosen.replace("{0}", adjective$);
   return updated
   
   }
   document.getElementById("mad_libs").addEventListener("submit",function(event) {
+    document.
     document.getElementById("demo").innerHTML = completeSentence(); 
-
+  }
 </script>
 </body>
 </html>
