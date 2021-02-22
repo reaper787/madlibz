@@ -7,17 +7,18 @@
 <body>
 <h1>Mad libs</h1>
 <!-- mad libs text boxs -->
-<form id="mad_libs">
-<label for="adjective"> Please type an adjective</label><br>
+<form id="mad_libs" onsubmit="javascript:handleIt()">
+<label for="adjective"> Please type an adjective</label>
 <input type="text" id="adjective"><br>
-<label for="adjective">please type a noun </label>
+<!--label for="adjective">please type a noun </label>
 <input type="text" id="noun"><br>
 <label for= "verb"> please type a verb </label>
-<input type="text" id="verb">
+<input type="text" id="verb"-->
 <input type="submit">
 </form>
   <p id="demo"></p>
 <script>
+
 /** This is the collection of base sentences **/
 var sentences = {
 "This is first {0} sentence",
@@ -27,8 +28,29 @@ var sentences = {
 "This is fifth {0} sentence"
 };
 
-/** This one finishes the sentence chosen at random **/
+function handleIt() {
+  var adjective = document.getElementById("adjective");
+  alert("Hello Shaarav: " + adjective.value);
+  var r = Math.random(1,5);
+  alert(r);
+  var chosen = sentences[r];
+  var updated = chosen.replace("{0}", adjective.value);
+  alert(updated);
+  
+  document.getElementById("demo").innerHTML = updated; 
+}
+/** This is the collection of base sentences 
+var sentences = {
+"This is first {0} sentence",
+"This is second {0} sentence",
+"This is third {0} sentence",
+"This is fourth {0} sentence",
+"This is fifth {0} sentence"
+};
+
+/** This one finishes the sentence chosen at random 
 var completeSentence = function() {
+alert("Hello Shaarav")
   var r = Math.random(1,5);
   var adjective = document.getElementById("adjective");
   alert(adjective);
@@ -36,13 +58,14 @@ var completeSentence = function() {
   var verb = document.getElementById("verb");
   var chosen = sentences[r];
   var updated = chosen.replace("{0}", adjective$);
-  return updated
+  return false;
   
   }
   document.getElementById("mad_libs").addEventListener("submit",function(event) {
     document.
     document.getElementById("demo").innerHTML = completeSentence(); 
   }
+  **/
 </script>
 </body>
 </html>
