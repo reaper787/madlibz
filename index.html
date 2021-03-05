@@ -7,11 +7,11 @@
 
 /**This is the collection of base sentences**/
 var sentences = [
-"I have {0} poop and likes {1} Also to {2}",
-"I have {0} face and likes {1} Also to {2}",
-"I have {0} nose and likes {1} Also to {2}",
-"I have {0} fart and likes {1} Also to {2}",
-"I have {0} head and likes {1} Also to {2}"
+"To be a {0} {1} you must go {2}ing",
+"To be or not to be {2}ing is the {0} {1}",
+"Try not to become a man of success but rather try to become a {0} {1} that is always {2}ing",
+"{1} should be made as {0} as possible. But not simpler... {2} it!",
+"Logic will get you from A to B. {0} {1} will {2} you everywhere!"
 ];
 
 function handleIt() {
@@ -36,6 +36,14 @@ function handleIt() {
   return false;
 }
 
+function reset() {
+
+	document.getElementById("adjective").value = "";
+	document.getElementById("noun").value = "";
+	document.getElementById("verb").value = "";
+	document.getElementById("demo").innerHTML="";
+}
+
 </script>
 </head>
 <body>
@@ -48,6 +56,7 @@ function handleIt() {
 <label for= "verb"> please type a verb </label>
 <input type="text" id="verb">
 <input type="button" value="Submit" onclick="javascript:handleIt()">
+<input type="button" value="Reset" onclick="javascript:reset()">
   <p id="demo"></p>
 </body>
 </html>
