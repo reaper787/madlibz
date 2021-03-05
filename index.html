@@ -6,22 +6,29 @@
 <script>
 
 /**This is the collection of base sentences**/
-var sentences = [
-"To be a {0} {1} you must go {2}ing",
+let sentences = [
+"Life is like riding a {1}. To keep your {0}, you must keep {2}.",
 "To be or not to be {2}ing is the {0} {1}",
 "Try not to become a man of success but rather try to become a {0} {1} that is always {2}ing",
 "{1} should be made as {0} as possible. But not simpler... {2} it!",
-"Logic will get you from A to B. {0} {1} will {2} you everywhere!"
+"Logic will get you from A to B. {0} {1} will {2} you everywhere!",
+"Be the {1} you that you wish to {2} in the {0} world."
 ];
+let quotes = [
+"Life is like riding a bicycle. To keep your balance, you must keep moving. - Albert Einstien", 
+"To be or not to be is the question - William Shakespere",
+"Try not to become a man of sucsess but rather a man of value - Albert Einstien",
+"Everything should be made as simple as possible, but no simpler - Albert Einstien",
+"Logic will get you from A to B, imagination will take you everywhere - Albert Einstien",
+"Be the change you that you wish to see in the world - Mahatma Gandhi"
+]
 
 function handleIt() {
-    
-  var r = Math.floor(Math.random() *4) +0;
+  
+  var r = Math.floor(Math.random() * 6);
   var adjective = document.getElementById("adjective");
   var noun = document.getElementById("noun");
   var verb = document.getElementById("verb");
-
-  //alert(r);
 
   var chosen = sentences[r];
   var updAdj =chosen.replace("{0}", adjective.value); 
@@ -29,19 +36,19 @@ function handleIt() {
   var updVrb = updNoun.replace("{2}", verb.value);
   
   //alert(updVrb);
-  
-  document.getElementById("demo").innerHTML = updVrb; 
-  //alert(document.getElementById("demo").innerHTML);
-  
+  document.getElementById("quote").innerHTML = "Original Quote: " + quotes[r];
+  document.getElementById("sentence").innerHTML = "Your Madlib: " + updVrb; 
+  //alert(document.getElementById("sentence").innerHTML);
   return false;
+  
 }
-
 function reset() {
 
 	document.getElementById("adjective").value = "";
 	document.getElementById("noun").value = "";
 	document.getElementById("verb").value = "";
-	document.getElementById("demo").innerHTML="";
+	document.getElementById("sentence").innerHTML="";
+	document.getElementById("quote").innerHTML="";
 }
 
 </script>
@@ -49,6 +56,7 @@ function reset() {
 <body>
 <link rel="stylesheet" href="stylesheet.css">
 <h1>Mad libs</h1>
+
 <label for="adjective"> Please type an adjective</label>
 <input type="text" id="adjective"><br>
 <label for="noun">please type a noun </label>
@@ -57,6 +65,8 @@ function reset() {
 <input type="text" id="verb">
 <input type="button" value="Submit" onclick="javascript:handleIt()">
 <input type="button" value="Reset" onclick="javascript:reset()">
-  <p id="demo"></p>
+<br>
+<div id="sentence"></div>
+<div id="quote"></div>
 </body>
 </html>
